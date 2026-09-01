@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Back-End</title>
+
+<style>
+
+body {
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+background-color: #f5dbea;
+color: #333;
+}
+
+header {
+background-color: #d12798;
+color: rgb(245, 160, 238);
+text-align: center;
+padding: 30px;
+}
+
+header h1 {
+margin: 0 0 10px;
+}
+
+header p {
+margin: 0;
+}
+
+.observacao {
+background-color: #fff;
+color: #555;
+padding: 12px;
+margin: 20px auto;
+max-width: 900px;
+border-left: 5px solid #d12798;
+font-size: 14px;
+text-align: left;
+}
+
+nav {
+background-color: #fff;
+text-align: center;
+padding: 15px;
+box-shadow: 0 2px 5px #ccc;
+}
+
+nav a {
+color: #d12798;
+text-decoration: none;
+margin: 10px;
+font-weight: bold;
+}
+
+nav a:hover {
+text-decoration: underline;
+}
+
+main {
+width: 90%;
+max-width: 950px;
+margin: 25px auto;
+}
+
+.card {
+background-color: white;
+padding: 25px;
+margin-bottom: 20px;
+border-radius: 10px;
+box-shadow: 0 2px 6px #ccc;
+}
+
+.card h2 {
+color: #d12798;
+border-bottom: 2px solid #eecbe5;
+padding-bottom: 8px;
+}
+
+.card h3 {
+color: #a51c76;
+}
+.card p {
+line-height: 1.6;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 15px;
+}
+.botao {
+display: inline-block;
+background-color: #d12798;
+color: white;
+padding: 10px 18px;
+border-radius: 5px;
+text-decoration: none;
+margin-top: 10px;
+}
+.botao:hover {
+background-color: #a51c76;
+}
+
+.diagrama {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+flex-wrap: wrap;
+margin: 20px 0;
+}
+
+.caixa {
+background-color: #f5dbea;
+border: 2px solid #d12798;
+padding: 15px;
+border-radius: 5px;
+text-align: center;
+}
+
+.seta {
+font-size: 25px;
+color: #d12798;
+}
+
+footer {
+background-color: #d12798;
+color: white;
+text-align: center;
+padding: 20px;
+margin-top: 30px;
+}
+
+</style>
+</head>
+<body>
+<header>
+<div class="observacao">
+<strong>Observação professor:</strong>
+Este trabalho foi desenvolvido utilizando a versão Web do VS Code.
+Tive algumas dificuldades com o arquivo CSS externo, então optei
+por colocar o CSS dentro do próprio HTML.
+</div>
+<h1>Desenvolvimento Back-End</h1>
+<p>Entendendo o que acontece por trás de uma aplicação Web</p>
+</header>
+<nav>
+<a href="#inicio">Início</a>
+<!-- Coloquei esse botão para ir direto para a próxima parte do trabalho,
+sem precisar criar outra página HTML. O #frontend leva até a seção
+que tem o id="frontend". -->
+<a href="#frontend">Front-End e Back-End</a>
+<a href="#funcionamento">Funcionamento</a>
+<a href="#api">APIs</a>
+<a href="#tecnologias">Tecnologias</a>
+<a href="#referencias">Referências</a>
+</nav>
+<main>
+<section id="inicio" class="card">
+<h2>O que é Back-End?</h2>
+<p>
+O Back-End é muito importante em uma aplicação Web. Ele recebe
+as requisições, processa as informações, acessa o banco de dados
+quando necessário e envia uma resposta para o usuário.
+</p>
+<p>
+Quando um usuário faz login, realiza uma compra ou envia um formulário,
+o Back-End recebe essas informações e realiza o processamento.
+</p>
+
+</section>
+<section id="frontend" class="card">
+<h2>1. Front-End e Back-End</h2>
+<h3>Front-End</h3>
+
+<p>
+O Front-End é a parte do site que o usuário consegue visualizar
+e utilizar. Ele envolve elementos como textos, imagens, botões,
+menus e formulários.
+</p>
+
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+</ul>
+
+<h3>Back-End</h3>
+<p>
+O Back-End trabalha nos bastidores da aplicação. Ele processa
+informações, aplica regras de negócio, acessa bancos de dados
+e envia respostas para o Front-End.
+</p>
+<h3>Diferenças</h3>
+<table>
+<!-- tr cria uma linha da tabela. -->
+<tr>
+<th>Front-End</th>
+<th>Back-End</th>
+</tr>
+<tr>
+<!-- td coloca os dados da tabela. -->
+<td>Parte visual do site</td>
+
+<td>Parte que funciona no servidor</td>
+</tr>
+<tr>
+<td>Interação com o usuário</td>
+<td>Processamento dos dados</td>
+</tr>
+<tr>
+<td>HTML, CSS e JavaScript</td>
+<td>Python, Java, PHP, C# e Node.js</td>
+</tr>
+</table>
+<h3>Comunicação</h3>
+
+<p>
+O Front-End e o Back-End se comunicam por meio de requisições
+e respostas.
+</p>
+<div class="diagrama">
+<div class="caixa">
+<strong>Usuário</strong>
+<br>
+Realiza uma ação
+</div>
+<div class="caixa">
+<strong>Front-End</strong>
+<br>
+Envia requisição
+</div>
+<div class="caixa">
+<strong>Back-End</strong>
+<br>
+Processa
+</div>
+
+<div class="caixa">
+<strong>Banco de Dados</strong>
+<br>
+Armazena dados
+</div>
+</div>
+<p>
+O Back-End normalmente é executado em um servidor, enquanto
+o Front-End é executado no navegador do usuário.
+</p>
+<a href="#funcionamento" class="botao">Ver funcionamento</a>
+</section>
+<section id="funcionamento" class="card">
+<h2>2. Funcionamento do Back-End</h2>
+<h3>Cliente e servidor</h3>
+<p>
+O cliente é o navegador ou dispositivo utilizado pelo usuário.
+O servidor recebe as solicitações e realiza os processos necessários.
+</p>
+
+<h3>Requisição e resposta</h3>
+<p>
+A requisição é uma solicitação enviada pelo cliente. Depois de
+processar a solicitação, o servidor envia uma resposta.
+</p>
+
+<h3>HTTP e HTTPS</h3>
+<p>
+HTTP é um protocolo utilizado para a comunicação entre cliente
+e servidor. HTTPS é a versão segura, que utiliza criptografia
+para proteger os dados.
+</p>
+
+<h3>Servidor Web</h3>                      
+<p>
+O servidor Web recebe as requisições e envia os arquivos ou
+informações solicitadas.
+</p>
+<h3>Regras de negócio</h3>
+<p>
+São regras que determinam como o sistema deve funcionar.
+Por exemplo, uma loja pode impedir uma compra quando não existe
+produto disponível no estoque.
+</p>
+<h3>Validação de dados</h3>
+<ul>
+<li>Verificar se o e-mail está correto.</li>
+<li>Verificar se os campos obrigatórios foram preenchidos.</li>
+<li>Verificar se os dados possuem o formato correto.</li>
+<li>Verificar informações antes de armazená-las.</li>
+</ul>
+
+<h3>O que acontece quando o usuário realiza uma ação?</h3>
+<ol>
+<li>O usuário realiza uma ação.</li>
+<li>O Front-End envia uma requisição.</li>
+<li>O servidor recebe a requisição.</li>
+<li>O Back-End processa os dados.</li>
+<li>O banco de dados pode ser consultado.</li>
+<li>O servidor envia uma resposta.</li>
+<li>O Front-End apresenta o resultado.</li>
+</ol>
+
+<a href="#api" class="botao">Conhecer APIs</a>
+</section>
+<section id="api" class="card">
+<h2>3. APIs</h2>
+<h3>O que é uma API?</h3>
+<p>
+API significa Application Programming Interface. Ela permite
+que diferentes sistemas se comuniquem e troquem informações.
+</p>
+<h3>API REST</h3>
+<p>
+API REST é uma forma muito utilizada para criar APIs Web.
+Ela utiliza métodos HTTP para realizar operações.
+</p>
+<h3>Endpoints</h3>
+<p>
+Endpoint é um endereço utilizado para acessar uma determinada
+função ou informação de uma API.
+</p>
+<pre>
+
+
+GET /usuarios
+</pre>
+<!-- O pre serve para mostrar os exemplos de código. -->
+<h3>Métodos HTTP</h3>
+<table>
+<tr>
+<th>Método</th>
+<th>Função</th>
+<th>Exemplo</th>
+</tr>
+<tr>
+<td>GET</td>
+<td>Buscar informações</td>
+<td>Buscar usuários</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Criar informações</td>
+<td>Cadastrar usuário</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Atualizar informações</td>
+<td>Atualizar usuário</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>Alterar parte das informações</td>
+<td>Alterar nome</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Excluir informações</td>
+<td>Excluir usuário</td>
+</tr>
+</table>
+<h3>Exemplo de utilização</h3>
+<pre>
+GET /usuarios
+POST /usuarios
+PUT /usuarios/1
+PATCH /usuarios/1
+DELETE /usuarios/1
+</pre>
+<p>
+O Front-End pode utilizar uma API para solicitar informações
+ao Back-End e apresentar os resultados para o usuário.</p>
+<a href="#tecnologias" class="botao">Ver tecnologias</a>
+</section>
+<section id="tecnologias" class="card">
+<h2>4. Tecnologias Back-End</h2>
+<h3>Python</h3>
+<p>
+Python é uma linguagem conhecida por sua sintaxe simples.
+Pode ser utilizada com frameworks como Django e Flask.
+</p>
+<h3>Java</h3>
+<p>
+Java é bastante utilizada em sistemas empresariais e aplicações
+de grande porte.
+</p>
+<h3>PHP</h3>
+<p>
+PHP é uma linguagem muito utilizada no desenvolvimento de
+sites e sistemas Web.
+</p>
+<h3>Node.js</h3>
+<p>
+Node.js permite utilizar JavaScript no lado do servidor.
+É muito utilizado para APIs e aplicações Web.
+</p>
+<h3>C#</h3>
+<p>
+C# é uma linguagem da Microsoft utilizada em aplicações Web,
+sistemas empresariais e outros projetos.
+</p>
+<table>
+<tr>
+<th>Tecnologia</th>
+<th>Linguagem</th>
+<th>Exemplo de utilização</th>
+</tr>
+<tr>
+<td>Python</td>
+<td>Python</td>
+<td>APIs e aplicações Web</td>
+</tr>
+<tr>
+
+<td>Java</td>
+<td>Java</td>
+<td>Sistemas empresariais</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>PHP</td>
+<td>Sites e sistemas Web</td>
+</tr>
+
+<tr> 
+<td>Node.js</td>
+<td>JavaScript</td>
+<td>APIs</td>
+</tr>
+<tr>
+<td>C#</td>
+<td>C#</td>
+<td>Aplicações Web</td>
+
+</tr>
+</table>
+<a href="#exemplo" class="botao">Ver exemplo real</a>
+
+</section>
+<section id="exemplo" class="card">
+<h2>Exemplo Real: Login</h2>
+<p>
+Um exemplo de utilização do Back-End acontece quando uma pessoa
+faz login em um site.
+</p>
+<ol>
+<li>O usuário informa seu e-mail e senha.</li>
+<li>O Front-End envia os dados.</li>
+<li>O Back-End recebe a requisição.</li>
+<li>Os dados são validados.</li>
+<li>O banco de dados é consultado.</li>
+<li>O sistema verifica as informações.</li>
+<li>O Back-End envia uma resposta.</li>
+<li>O Front-End mostra o resultado.</li>
+</ol>
+
+<div class="diagrama">
+
+<div class="caixa">
+<strong>Usuário</strong>
+<br>
+Login
+</div>
+
+<div class="seta">→</div>
+
+<div class="caixa">
+<strong>Front-End</strong>
+<br>
+Envia dados
+</div>
+
+<div class="seta">→</div>
+
+<div class="caixa">
+<strong>Back-End</strong>
+<br>
+Verifica
+</div>
+
+<div class="seta">→</div>
+
+<div class="caixa">
+<strong>Banco</strong>
+<br>
+Consulta
+</div>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Conclusão</h2>
+
+<p>
+O Back-End é uma parte fundamental das aplicações Web. Ele
+é responsável por receber requisições, processar informações,
+aplicar regras, trabalhar com bancos de dados e enviar respostas
+para o usuário.
+</p>
+<p>
+Dessa forma, quando clicamos em um botão em um site, pode existir
+uma série de processos acontecendo no servidor antes que o
+resultado apareça na tela.
+</p>
+</section>
+
+
+<h3>Quando o usuário clica em um botão no site, o que está acontecendo no Back-End?</h3>
+<p>
+Quando o usuário clica em um botão, o Front-End pode enviar uma requisição para o Back-End. O servidor recebe essa requisição, processa os dados, pode consultar um banco de dados e depois envia uma resposta para o Front-End. O resultado então aparece para o usuário.</p>
+<h2 id="referencias">Referências</h2>
+<ul>
+<li>
+<a href="https://brasilescola.uol.com.br/informatica/" target="_blank">
+Brasil Escola - Informática
+</a>
+</li>
+<li>
+<a href="https://www.todamateria.com.br/" target="_blank">
+Toda Matéria
+</a>
+</li>
+<li>
+<a href="https://www.alura.com.br/artigos" target="_blank">
+Alura
+</a>
+</li>
+<li>
+<a href="https://canaltech.com.br/" target="_blank">
+Canaltech
+</a>
+</li>
+<li>
+<a href="https://www.techtudo.com.br/" target="_blank">
+TechTudo
+</a>
+</li>
+</ul>
+</main>
+<footer> 
+<p>Trabalho de Desenvolvimento Back-End</p> 
+<p>Desenvolvido em HTML e CSS por Júlia Pardim Vieira</p>
+</footer>
+
+</body>
+
+</html>
